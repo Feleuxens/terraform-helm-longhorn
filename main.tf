@@ -1,11 +1,11 @@
 resource "helm_release" "longhorn" {
   name = "longhorn"
 
-  repository = "https://charts.longhorn.io"
-  chart      = "longhorn"
-  version    = "1.5.3"
+  repository       = "https://charts.longhorn.io"
+  chart            = "longhorn"
+  version          = "1.5.3"
   create_namespace = true
-  namespace = "longhorn"
+  namespace        = "longhorn"
 
   values = [
     templatefile("${path.module}/helm-values/longhorn.yaml", {
